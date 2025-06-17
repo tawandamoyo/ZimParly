@@ -5,6 +5,7 @@ gunicorn
 
 # Data validation
 pydantic
+pydantic-settings
 
 # Utils
 python-dotenv
