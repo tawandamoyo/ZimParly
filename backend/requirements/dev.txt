@@ -1,0 +1,7 @@
+-r base.txt
+
+# Code quality
+black==23.1.0
+isort
+flake8
+mypy

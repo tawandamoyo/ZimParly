@@ -1,0 +1,11 @@
+# Web framework
+fastapi
+uvicorn[standard]
+gunicorn
+
+# Data validation
+pydantic
+
+# Utils
+python-dotenv
+structlog
