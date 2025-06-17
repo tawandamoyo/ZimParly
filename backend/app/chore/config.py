@@ -8,6 +8,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str
     
     OPENSEARCH_URL: str
+    OPENSEARCH_INDEX: str
     
     REDIS_URL: str
     
@@ -17,7 +18,10 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str = "HS256"
     
-    ALLOWED_ORIGINS: List[str] = ["HTTP://localhost:3000"]
+    PARLIAMENT_BASE_URL: str
+    SCRAPING_DELAY: int  
+    
+    ALLOWED_ORIGINS: List[str] = ["http://localhost:3000"]
     
     LOG_LEVEL: str = "INFO"
     
