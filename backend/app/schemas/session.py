@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel
 from typing import Optional, List
 from app.models.session import Session
 import datetime
@@ -12,4 +12,18 @@ class SessionBase(BaseModel):
 class SessionCreate(SessionBase):
     pass
 
-clas
+class SessionUpdate(BaseModel):
+    status: Optional[ProcessingStatus] = None
+    processing_started_at: Optional[datetime.datetime] = None
+    processing_finished_at: Optional[datetime.datetime] = None
+    statement_count: Optional[int] = None
+    
+class SessionRead(SessionBase):
+    id: int
+    status: ProcessingStatus
+    statement_count: int
+    created_at: datetime.datetime
+    statements: List[StatementRead] = []
+    
+    class Config:
+        from_attributes = True

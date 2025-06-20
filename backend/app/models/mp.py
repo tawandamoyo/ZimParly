@@ -1,10 +1,11 @@
-from sqlalchemy import Column, Index, String, Text,ForeignKey
+from sqlalchemy import Column, Index, String, Text, Boolean, Integer
 from sqlalchemy.orm import relationship
 from app.core.database import Base
 
 class MP(Base):
     __tablename__ = "mps"
     
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     full_name = Column(String(255), nullable=False, index=True)
     honorific = Column(String(50))
     party = Column(String(255), index=True)

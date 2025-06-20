@@ -1,14 +1,20 @@
 import enum
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey, Index
+from sqlalchemy import Column, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 from app.core.database import Base
 import datetime
 
-
+class ProcessingStatus(str, enum.Enum):
+    """Enum for session processing status"""
+    PENDING = "pending"
+    IN_PROGRESS = "in_progress"
+    COMPLETED = "completed"
+    FAILED = "failed"
+    
 class Session(Base):
     __tablename__ = "sessions"
     
-    id = Column()
+    id = Column(Integer, primary_key=True, index=True, autoincrement=True)
     source_url = Column(String, nullable=True)
     processing_started_at = Column(DateTime, nullable=True)
     processing_finished_at = Column(DateTime, nullable=True)

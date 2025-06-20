@@ -6,6 +6,8 @@ class Settings(BaseSettings):
     DEBUG: bool = False
     
     DATABASE_URL: str
+    DATABASE_POOL_SIZE: int
+    DATABASE_MAX_OVERFLOW: int
     
     OPENSEARCH_URL: str
     OPENSEARCH_INDEX: str
