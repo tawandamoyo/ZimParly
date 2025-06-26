@@ -10,3 +10,9 @@ pydantic-settings
 # Utils
 python-dotenv
 structlog
+
+# Scraping
+bs4
+httpx
+playwright
+lxml
